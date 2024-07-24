@@ -1,0 +1,30 @@
+{
+	"Version": "2012-10-17",
+	"Id": "Policy1721631631922",
+	"Statement": [
+		{
+			"Sid": "Stmt1721631343622",
+			"Effect": "Allow",
+			"Principal": {
+				"AWS": [
+					"arn:aws:iam::339712725092:user/Paras",
+					"arn:aws:iam::339712725092:role/LambdaFucntionStack-myLambdaFunctionServiceRole73F2-8juEx9RAGFWX"
+				]
+			},
+			"Action": [
+				"s3:GetObject",
+				"s3:PutObject"
+			],
+			"Resource": "arn:aws:s3:::mypcbucket1245/*"
+		},
+		{
+			"Sid": "Stmt1721631627851",
+			"Effect": "Deny",
+			"Principal": {
+				"AWS": "arn:aws:iam::339712725092:user/Paras"
+			},
+			"Action": "s3:*",
+			"Resource": "arn:aws:s3:::mypcbucket1245/*"
+		}
+	]
+}
